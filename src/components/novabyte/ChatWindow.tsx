@@ -5,6 +5,7 @@ import { NovaBadge } from "./Badge";
 import { ChatMessage } from "./ChatMessage";
 import { ChatInput } from "./ChatInput";
 import { TypingIndicator } from "./TypingIndicator";
+import { ThemeToggle } from "./ThemeToggle";
 
 export interface Message {
   id: string;

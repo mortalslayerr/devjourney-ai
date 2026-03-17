@@ -6,6 +6,61 @@
 
 @layer base {
   :root {
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 92%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 217 91% 55%;
+
+    --radius: 0.75rem;
+
+    /* NovaByte custom tokens — light */
+    --nova-bg: 220 20% 97%;
+    --nova-surface: 0 0% 100%;
+    --nova-glass: 220 14% 96%;
+    --nova-glow: 217 91% 55%;
+    --nova-success: 160 84% 39%;
+    --nova-success-soft: 160 84% 39% / 0.15;
+    --nova-blue-soft: 217 91% 55% / 0.08;
+    --nova-blue-border: 217 91% 55% / 0.2;
+    --nova-blue-hover: 217 91% 55% / 0.15;
+    --nova-white-5: 220 13% 87% / 0.5;
+    --nova-white-10: 220 13% 87% / 0.6;
+    --nova-white-20: 220 13% 87% / 0.8;
+
+    --sidebar-background: 220 20% 95%;
+    --sidebar-foreground: 220 9% 46%;
+    --sidebar-primary: 217 91% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 92%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 87% / 0.5;
+    --sidebar-ring: 217 91% 55%;
+  }
+
+  .dark {
     --background: 222 47% 4%;
     --foreground: 213 31% 91%;
 
@@ -34,9 +89,7 @@
     --input: 0 0% 100% / 0.08;
     --ring: 217 91% 60%;
 
-    --radius: 0.75rem;
-
-    /* NovaByte custom tokens */
+    /* NovaByte custom tokens — dark */
     --nova-bg: 222 47% 4%;
     --nova-surface: 222 47% 6%;
     --nova-glass: 215 28% 11%;
@@ -63,7 +116,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-colors duration-300;
   }
 
   body {
@@ -74,7 +127,14 @@
 
 @layer utilities {
   .glass-panel {
-    @apply bg-nova-glass/60 backdrop-blur-xl border border-nova-white-10 rounded-xl shadow-2xl;
+    @apply border rounded-xl shadow-2xl;
+    background: hsl(var(--nova-glass) / 0.6);
+    border-color: hsl(var(--nova-white-10));
+  }
+
+  .dark .glass-panel {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
 
   .glass-panel-subtle {
