@@ -47,7 +47,10 @@ export const ChatWindow = ({
           <MessageSquare size={16} className="text-primary" />
           <h2 className="text-sm font-semibold tracking-wide">Onboarding Assistant</h2>
         </div>
-        <NovaBadge>Active Session</NovaBadge>
+        <div className="flex items-center gap-3">
+          <NovaBadge>Active Session</NovaBadge>
+          <ThemeToggle />
+        </div>
       </header>
 
       <div className="flex-1 overflow-y-auto p-8 space-y-6 scrollbar-hide">
